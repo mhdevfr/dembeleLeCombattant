@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démo DOM XSS</title>
+</head>
+<body>
+    <h1>Bienvenue sur la démo d'une attaque XSS via DOM</h1>
+    <p id="message">50$</p>
+
+    <script>
+        let input = window.location.hash.substring(1);
+        if (input) {
+            document.getElementById('message').innerHTML = input;
+        }
+        
+    </script>
+</body>
+</html>
